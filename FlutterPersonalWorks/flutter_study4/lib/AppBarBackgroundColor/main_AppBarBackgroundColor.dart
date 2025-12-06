@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
@@ -37,7 +38,61 @@ class _MyHomePageState extends State<MyHomePage> {
 
         //AppBar Color
         backgroundColor: Colors.green,
-        title: Text(widget.title),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text("Title"), Text("Sub Title"),
+          ],
+        ),
+
+        //Leading left side button
+        leading: IconButton(
+          onPressed: (){
+            print("Leading Triggered!");
+          },
+          icon: Icon(Icons.dehaze),
+          tooltip: "Leading Trigger Position!",
+        ),
+
+        //Actions right side AppBar buttons
+        actions: [
+
+          //Any Button can be added.
+          TextButton(
+            onPressed: (){
+              print("TextButton Triggered!");
+            },
+            child: Text(
+              "Exit!",
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+
+          ElevatedButton(
+            onPressed: (){
+              print("Elevated Button Triggered!");
+            },
+            child: Text("AppBar Elevated Button!"),
+          ),
+
+          IconButton(
+            onPressed: (){
+              print("Info Triggered!");
+            },
+            icon: Icon(Icons.info_outline),
+            tooltip: "Info Action Trigger Position!",
+          ),
+
+          IconButton(
+            onPressed: (){
+              print("Popup Triggered!");
+            },
+            icon: Icon(Icons.more_vert),
+            tooltip: "Popup Action Trigger Position!",
+          ),
+
+        ],
+
       ),
       body: Center(
         child: Column(
