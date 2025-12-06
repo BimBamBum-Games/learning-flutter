@@ -91,6 +91,23 @@ class _MyHomePageState extends State<MyHomePage> {
             tooltip: "Popup Action Trigger Position!",
           ),
 
+          //Use of PopupMenuButton and PopupMenuItem
+          PopupMenuButton(
+              itemBuilder: (context) {
+                return [
+                  PopupMenuItem(value: 0, child: Text("Update")),
+                  PopupMenuItem(value: 1, child: Text("Delete")),
+                  PopupMenuItem(value: 2, child: Text("Upgrade")),
+                  PopupMenuItem(value: 3, child: Text("Insert")),
+                  PopupMenuItem(value: 4, child: Text("Select")),
+                ];
+              },
+
+              onSelected: (value){
+                print("Selected Value: $value");
+              }
+          ),
+
         ],
 
       ),
