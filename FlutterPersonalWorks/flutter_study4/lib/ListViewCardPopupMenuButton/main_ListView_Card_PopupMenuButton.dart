@@ -52,10 +52,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
                   onSelected: (comingValue){
                     if(comingValue == 0){
-                      print("Delete Triggered!");
+                      print("Delete Triggered! For ${items[i]}");
                     }
                     if(comingValue == 1){
-                      print("Update Triggered!");
+                      print("Update Triggered! For ${items[i]}");
                     }
                   },
 
